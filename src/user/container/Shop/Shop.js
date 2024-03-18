@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 function Shop(props) {
 
   const [fruitsData, setFruitsData] = useState([]);
+  const [priceData, setPriceData] = useState([]);
+  const [type, setType] = useState('');
+  console.log(type);
+
 
   const getData = async () => {
 
@@ -22,6 +26,26 @@ function Shop(props) {
   useEffect((v) => {
     getData()
   }, [])
+
+  // const fData = () => {
+
+  //   let fData = [];
+
+  //   if (priceData !== '') {
+  //     fData = fruitsData.filter((v, i) => (v.price === priceData))
+  //     console.log(fData);
+  //   }
+
+  //   if (type !== '') {
+  //     fData = fData.filter((v) => v.type === type);
+  //   }
+
+
+  //   return fData
+  // }
+
+  // let finalData = fData();
+  // console.log(finalData);
 
   return (
     <div>
@@ -104,7 +128,7 @@ function Shop(props) {
                     <div className="col-lg-12">
                       <div className="mb-3">
                         <h4 className="mb-2">Price</h4>
-                        <input type="range" className="form-range w-100" id="rangeInput" name="rangeInput" min={0} max={500} defaultValue={0} oninput="amount.value=rangeInput.value" />
+                        <input onChange={event => setPriceData(event.target.value)} type="range" className="form-range w-100" id="rangeInput" name="rangeInput" min={0} max={500} defaultValue={0} oninput="amount.value=rangeInput.value" />
                         <output id="amount" name="amount" min-velue={0} max-value={500} htmlFor="rangeInput">0</output>
                       </div>
                     </div>
@@ -112,23 +136,23 @@ function Shop(props) {
                       <div className="mb-3">
                         <h4>Additional</h4>
                         <div className="mb-2">
-                          <input type="radio" className="me-2" id="Categories-1" name="Categories-1" defaultValue="Beverages" />
+                          <input onChange={event => setType(event.target.value)} type="radio" className="me-2" id="Categories-1" name="Categories-1" defaultValue="Beverages" />
                           <label htmlFor="Categories-1"> Organic</label>
                         </div>
                         <div className="mb-2">
-                          <input type="radio" className="me-2" id="Categories-2" name="Categories-1" defaultValue="Beverages" />
+                          <input onChange={event => setType(event.target.value)} type="radio" className="me-2" id="Categories-2" name="Categories-1" defaultValue="Beverages" />
                           <label htmlFor="Categories-2"> Fresh</label>
                         </div>
                         <div className="mb-2">
-                          <input type="radio" className="me-2" id="Categories-3" name="Categories-1" defaultValue="Beverages" />
+                          <input onChange={event => setType(event.target.value)} type="radio" className="me-2" id="Categories-3" name="Categories-1" defaultValue="Beverages" />
                           <label htmlFor="Categories-3"> Sales</label>
                         </div>
                         <div className="mb-2">
-                          <input type="radio" className="me-2" id="Categories-4" name="Categories-1" defaultValue="Beverages" />
+                          <input onChange={event => setType(event.target.value)} type="radio" className="me-2" id="Categories-4" name="Categories-1" defaultValue="Beverages" />
                           <label htmlFor="Categories-4"> Discount</label>
                         </div>
                         <div className="mb-2">
-                          <input type="radio" className="me-2" id="Categories-5" name="Categories-1" defaultValue="Beverages" />
+                          <input onChange={event => setType(event.target.value)} type="radio" className="me-2" id="Categories-5" name="Categories-1" defaultValue="Beverages" />
                           <label htmlFor="Categories-5"> Expired</label>
                         </div>
                       </div>
