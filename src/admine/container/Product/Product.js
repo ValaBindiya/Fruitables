@@ -9,7 +9,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
+    // { field: 'id', headerName: 'ID', width: 70 },
     { field: 'firstName', headerName: 'First name', width: 130 },
     { field: 'lastName', headerName: 'Last name', width: 130 },
     {
@@ -27,6 +27,7 @@ const columns = [
         valueGetter: (params) =>
             `${params.row.firstName || ''} ${params.row.lastName || ''}`,
     },
+    
 ];
 
 const rows = [
@@ -55,8 +56,6 @@ export default function Product() {
 
     return (
         <>
-
-
             <React.Fragment>
                 <Button variant="outlined" onClick={handleClickOpen}>
                     Add Product

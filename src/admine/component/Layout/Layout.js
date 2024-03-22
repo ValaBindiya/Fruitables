@@ -21,6 +21,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import AppleIcon from '@mui/icons-material/Apple';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import { NavLink } from 'react-router-dom';
+import CategoryIcon from '@mui/icons-material/Category';
 
 const drawerWidth = 240;
 
@@ -91,7 +92,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const admineLink = [
     { title: "Product", icon: <AppleIcon />, to: "/admine/Product" },
-    { title: "Reviews", icon: <RateReviewIcon />, to: "/admine/Reviews" }
+    { title: "Reviews", icon: <RateReviewIcon />, to: "/admine/Reviews" },
+    { title: "Category", icon: <CategoryIcon />, to: "/admine/Category" }
 ]
 
 export default function Layout({ children }) {
